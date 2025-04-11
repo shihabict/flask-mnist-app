@@ -5,33 +5,15 @@ import cv2
 from PIL import Image
 import io
 
+from prediction.predict import predict_digit
+
 app = Flask(__name__)
-# Load ONNX model once globally
-onnx_model_path = "model/mnist_cnn.onnx"
-ort_session = ort.InferenceSession(onnx_model_path)
-
-def predict_digit(image_array):
-
-    image_array = image_array.astype(np.float32) / 255.0
-
-    input_tensor = image_array.reshape(1, 1, 28, 28).astype(np.float32)
-
-    input_name = ort_session.get_inputs()[0].name
-    ort_inputs = {input_name: input_tensor}
-
-    ort_outs = ort_session.run(None, ort_inputs)
-    probabilities = ort_outs
-
-    predicted_digit = int(np.argmax(probabilities))
-    confidence_scores = [float(p) for p in probabilities]
-
-    return predicted_digit, confidence_scores
 
 
 @app.route('/')
 def index():
-    return "App running"
-    # return render_template('index.html')
+    # return "App running"
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -53,6 +35,8 @@ def predict():
 
         # Call ONNX prediction function
         digit, confidences = predict_digit(image_np)
+
+        print(f"Predicted Class: {digit}\nConfidence Scores: {confidences}")
 
         return jsonify({
             "predicted_digit": digit,

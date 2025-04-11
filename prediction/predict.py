@@ -2,7 +2,9 @@ from PIL import Image
 import onnxruntime as ort
 import numpy as np
 
-onnx_model_path = "../model/mnist_cnn.onnx"
+from settings import BASE_DIR
+
+onnx_model_path = f"{BASE_DIR}/model/mnist_cnn.onnx"
 ort_session = ort.InferenceSession(onnx_model_path)
 
 def predict_digit(image_array):

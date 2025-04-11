@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MNIST Digit Classifier</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>MNIST Digit Classifier</h1>
+
+  <div class="flex-container">
+    <!-- Left Column -->
+    <div class="left-panel">
+      <input type="file" id="image-upload" accept="image/*"><br>
+      <img id="image-preview" alt=""><br>
+      <button id="predict-btn">Predict</button>
+      <div id="result"></div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-panel">
+      <canvas id="confidence-chart" width="400" height="300"></canvas>
+    </div>
+  </div>
+  <!-- Sample Prediction Section -->
+<div class="sample-section">
+  <h2>Try Sample Digits</h2>
+  <div class="sample-grid-2x2">
+    {% for i in range(1, 5) %}
+    <div class="example-card">
+      <img src="{{ url_for('static', filename='images/' + i|string + '.png') }}"
+           alt="Sample {{ i }}"
+           data-src="{{ url_for('static', filename='images/' + i|string + '.png') }}"
+           class="sample-image" />
+      <p>Sample {{ i }}</p>
+      <button class="predict-sample-btn">Predict</button>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+</body>
+</html>
