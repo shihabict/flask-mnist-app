@@ -23,6 +23,7 @@ cd flask-mnist-app
 ```bash
 . shells/install.sh
 ```
+
 ### 3. Run Web App
 ```bash
 python app.py
