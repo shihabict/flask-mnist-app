@@ -18,7 +18,7 @@ A simple and responsive web application to classify handwritten digits using a p
 git clone https://github.com/shihabict/flask-mnist-app.git
 cd flask-mnist-app
 ```
-### 2.  Create Virtual Environment
+### 2.  Create Virtual Environment and install necessary packages
 ```bash
 . shells/install.sh
 ```
