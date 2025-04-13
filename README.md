@@ -1,6 +1,6 @@
 # MNIST Digit Classifier Web App
 
-A simple and responsive web application to classify handwritten digits using a pre-trained CNN model in ONNX format. Built with:
+A simple and responsive web application to classify handwritten digits using a pre-trained CNN model in ONNX format.
 
 ## Features
 
@@ -8,7 +8,6 @@ A simple and responsive web application to classify handwritten digits using a p
 - Select from 4 sample digit images
 - View prediction result and confidence scores
 - Interactive bar chart for probabilities
-- Responsive and modern UI
 ---
 
 ##  Installation
