@@ -1,7 +1,6 @@
 __pycache__
 *.idea
 *.pkl
-*.png
 model/
 mnistenv/
 data/
