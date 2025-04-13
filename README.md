@@ -1,4 +1,4 @@
-# 🧠 MNIST Digit Classifier Web App
+# MNIST Digit Classifier Web App
 
 A simple and responsive web application to classify handwritten digits using a pre-trained CNN model in ONNX format. Built with:
 
@@ -16,5 +16,14 @@ A simple and responsive web application to classify handwritten digits using a p
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/mnist-digit-classifier.git
-cd mnist-digit-classifier
+git clone https://github.com/shihabict/flask-mnist-app.git
+cd flask-mnist-app
+```
+### 2.  Create Virtual Environment
+```bash
+. shells/install.sh
+```
+### 3. Run Web App
+```bash
+python app.py
+```
